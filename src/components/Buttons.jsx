@@ -1,6 +1,6 @@
 import React from "react";
 
-const Buttons = () => {
+const Buttons = ({onBtnClick}) => {
   const buttonNames = [
     "C",
     "1",
@@ -25,7 +25,7 @@ const Buttons = () => {
     <div>
       <div className="buttonsContainer">
         {buttonNames.map((name) => (
-          <button className="btnClass">{name}</button>
+          <button className="btnClass" key={name} onClick={()=> onBtnClick(name)}>{name}</button>
         ))}
       </div>
     </div>

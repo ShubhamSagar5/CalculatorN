@@ -7,12 +7,25 @@ import Buttons from './components/Buttons'
 
 function App() {
   
+  const [calVal,setCalVal] = useState('')
+
+  const onButtonClick = (btnText) => {
+    // console.log(btnText)
+    if(btnText === 'C'){
+      setCalVal('')
+    }else if(btnText === '='){
+      const result = eval(calVal)
+      setCalVal(result)
+    }else{
+      setCalVal(calVal + btnText)
+    }
+  }
 
   return (
     <center className='calculator'>
         
-        <Display/>
-        <Buttons/>
+        <Display calVal={calVal}/>
+        <Buttons onBtnClick={onButtonClick}/>
     </center>
   )
 }

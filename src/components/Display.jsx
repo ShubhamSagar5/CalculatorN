@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const Display = () => {
+const Display = ({calVal}) => {
   return (
     <div>
-        <input type="text" name="" id="display" />
+        <input type="text" name="" id="display" value={calVal} readOnly/>
     </div>
   )
 }
